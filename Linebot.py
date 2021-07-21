@@ -13,8 +13,8 @@ import pymysql
 import urllib.request as req
 import random
 
-line_bot_api = LineBotApi('zqcm+vh1Xec0THaMHqwv0+LHx1m/tn1iKS7LORvcK/+qPk+iag0x+4dJUxSkzy+WzrBcfr6wc1qiGcqHO6uzBoY4ywqawnCJwvE3lfMu+6wzDX2uqSlDkgu93+KbpbMuSRwOtfgNrtXQW25SnOqdbgdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('188135d87b001d346c3bcaaed0a1e73e')
+line_bot_api = LineBotApi('*')
+handler = WebhookHandler('*')
 
 try:
     import xml.etree.cElementTree as ET
@@ -157,7 +157,6 @@ def handle_message(event):
                 if title.get('data-module') == '今日話題食譜':
                     urls.append('https://icook.tw/' + title.get('href'))
             a=random.randrange(1,4)
-            #print(a-1)
             contenturl=urls[a-1]
             request = req.Request(contenturl, headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"})
             title=[]
